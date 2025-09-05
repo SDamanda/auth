@@ -6,7 +6,7 @@ export default function HomePage(){
     return(
       <>
       <Link href="/publicas/cadastro">signup</Link>
-      <Link href="/publicas/login"></Link>
+      <Link href="/publicas/login">Login</Link>
       </>
     );
 }

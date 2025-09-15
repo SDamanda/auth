@@ -27,11 +27,10 @@ export function middleware(NextRequest) {
 
     if (foundRoute && token && foundRoute.whenAuthenticated === "redirect") {
         const url = request.nextUrl.clone();
-        url.pathname = "/cadastro"; // redireciona ao dashboard
+        url.pathname = "/comercial"; 
         return NextResponse.redirect(url);
     }
 
-    // Usuário autenticado e rota privada - deixa acessar
     return NextResponse.next();
 }
 

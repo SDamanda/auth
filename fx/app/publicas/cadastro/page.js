@@ -1,24 +1,11 @@
 'use client'
 import { useState } from "react"
-import { createClient } from "@supabase/supabase-js"
 
 export default function Cadastro() {
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
     const [numero, setNumero] = useState('')
-
-const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-    process.env.NEXT_PUBLIC_SUPABASE_URL
-    );
-    async function signUp (nome, email, senha, numero){
-        const {data, error} = await supabase.auth.signUp({
-            email, senha, nome, numero
-        });
-        if (error ) return error.message;
-        return data;
-    }
 
     return (
         <>

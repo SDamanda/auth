@@ -1,4 +1,5 @@
 'use client'
+import { POST } from "@/app/api/usuarios/router"
 import { useState } from "react"
 
 export default function Cadastro() {
@@ -7,6 +8,22 @@ export default function Cadastro() {
     const [senha, setSenha] = useState('')
     const [numero, setNumero] = useState('')
 
+    async function handleSubmit(event) {
+        event.preventDefaunt()
+
+        const Response = await fetch('/api/usuarios', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ nome, email, senha, numero }),
+        })
+        if(response.ok){
+            alert('cadastro realizado com sucesso')
+            window.location.href = '/privadas/comercial'
+        } else {
+            const error = await response.json();
+            alert('erro');
+        }
+    }
     return (
         <>
             <form>
@@ -38,7 +55,7 @@ export default function Cadastro() {
                         placeholder="numero"
                         value={numero}
                         onChange={(e) => setNumero(e.target.value)} />
-                        <input type="submit" value='Enviar' />
+                    <input type="submit" value='Enviar' />
                 </div>
             </form>
         </>

@@ -7,11 +7,11 @@ const publicrouter = [
 
 const redirectIfNotAuthenticated = "/cadastro";
 
-export function middleware(NextRequest) {
+export function middleware(request) {
     const { pathname } = request.nextUrl;
 
     const foundRoute = publicrouter
-        .find(route => route.path === pathname);server
+        .find(route => route.path === pathname);
 
     const token = request.cookies.get("token")?.value;
 
@@ -27,7 +27,7 @@ export function middleware(NextRequest) {
 
     if (foundRoute && token && foundRoute.whenAuthenticated === "redirect") {
         const url = request.nextUrl.clone();
-        url.pathname = "/comercial"; 
+        url.pathname = "/privadas/comercial"; 
         return NextResponse.redirect(url);
     }
 
@@ -38,11 +38,10 @@ export const config = {
     matcher: [
         /*
          * Match all request paths except for the ones starting with:
-         * - api (API routes)
          * - _next/static (static files)
          * - _next/image (image optimization files)
          * - favicon.ico, sitemap.xml, robots.txt (metadata files)
          */
-        '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)',
+        '/((?|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)',
     ],
 }

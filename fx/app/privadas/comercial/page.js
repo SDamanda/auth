@@ -3,7 +3,7 @@ export default function comercial(){
         <>
         <div>
             <h1>SE FUDER CONSEGUI</h1>
-            <input type="search" value='search'/>
+            <input type="search" placeholder='search'/>
         </div>
         </>
     )

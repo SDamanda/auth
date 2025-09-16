@@ -1,24 +1,32 @@
 'use client'
 import { useState } from "react";
+import { createClient } from "@supabase/supabase-js";
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export default function Login() {
-    const [email, setEmail] = useState('')
-    const [senha, setSenha] = useState('')
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
 
-
-    async function Login (email, senha){
-        const {data, error} = await supabase.auth.signInWithPassoword({
+    async function handleLogin(event) {
+        event.preventDefault();
+        const { data, error } = await supabase.auth.signInWithPassword({
             email,
-            password,
+            password: senha,
         });
-        if (error) return error.message;
-        return data;
-
+        if (error) {
+            alert(error.message);
+        } else {
+            alert('Login realizado com sucesso!');
+            window.location.href = '/privadas/comercial';
+        }
     }
 
     return (
         <>
-            <form>
+            <form onSubmit={handleLogin}>
                 <div style={{ display: "grid" }}>
                     <label htmlFor="email">Email:</label>
                     <input
@@ -29,13 +37,13 @@ export default function Login() {
 
                     <label htmlFor="password">Senha:</label>
                     <input
-                    type="password"
-                    placeholder="senha.."
-                    value={senha}
-                    onChange={(e) => setSenha(e.target.value)}/>
+                        type="password"
+                        placeholder="senha.."
+                        value={senha}
+                        onChange={(e) => setSenha(e.target.value)} />
                     <input type="submit" value="Enviar" />
-            </div>
-        </form >
+                </div>
+            </form>
         </>
-    )
+    );
 }

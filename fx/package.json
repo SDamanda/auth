@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",
+    "dotenv": "^17.2.2",
     "next": "15.5.2",
     "node.js": "^0.0.1-security",
     "react": "19.1.0",

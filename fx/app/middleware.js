@@ -1,9 +1,9 @@
 import { NextResponse, NextRequest } from "next/server";
 
 const publicrouter = [
-        { path: "/cadastro", whenAuthenticated: "redirect" },
-        { path: "/login", whenAuthenticated: "redirect" },
-    ];
+    { path: "/cadastro", whenAuthenticated: "redirect" },
+    { path: "/login", whenAuthenticated: "redirect" },
+];
 
 const redirectIfNotAuthenticated = "/cadastro";
 
@@ -27,7 +27,7 @@ export function middleware(request) {
 
     if (foundRoute && token && foundRoute.whenAuthenticated === "redirect") {
         const url = request.nextUrl.clone();
-        url.pathname = "/privadas/comercial"; 
+        url.pathname = "/privadas/comercial";
         return NextResponse.redirect(url);
     }
 
@@ -35,13 +35,5 @@ export function middleware(request) {
 }
 
 export const config = {
-    matcher: [
-        /*
-         * Match all request paths except for the ones starting with:
-         * - _next/static (static files)
-         * - _next/image (image optimization files)
-         * - favicon.ico, sitemap.xml, robots.txt (metadata files)
-         */
-        '/((?|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)',
-    ],
+    matcher: ['/cadastro', '/login', '/privadas/:path*'],
 }

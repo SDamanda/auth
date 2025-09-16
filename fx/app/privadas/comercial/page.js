@@ -1,9 +1,9 @@
-function comercial(){
+export default function comercial(){
     return (
         <>
         <div>
-            <h1>olha</h1>
-            <input type="search" value='search'>search..</input>
+            <h1>SE FUDER CONSEGUI</h1>
+            <input type="search" value='search'/>
         </div>
         </>
     )

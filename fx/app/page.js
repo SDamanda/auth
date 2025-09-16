@@ -1,12 +1,19 @@
 "use client"
+import "./globals.css";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-export default function HomePage(){
+export default function HomePage() {
+  const router = useRouter()
 
-    return(
-      <>
-      <Link href="/publicas/cadastro">signup</Link>
-      <Link href="/publicas/login">Login</Link>
-      </>
-    );
+  return (
+    <>
+      <main>
+        <h1>Bem-vindo</h1>
+        <p>escolha uma opção para continuar</p>
+        <button className="login" onClick={() => router.push("/publicas/login")}>Entrar</button>
+        <button className="cadastro" onClick={() => router.push("/publicas/cadastro")}>Criar conta</button>
+      </main >
+    </>
+  );
 }

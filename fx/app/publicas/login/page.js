@@ -1,4 +1,5 @@
 'use client'
+import './globals.css'
 import { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 
@@ -12,7 +13,7 @@ export default function Login() {
 
     async function handleLogin(event) {
         event.preventDefault();
-        const { data, error } = await supabase.auth.signInWithPassword({
+        const { error } = await supabase.auth.signInWithPassword({
             email,
             password: senha,
         });
@@ -25,25 +26,38 @@ export default function Login() {
     }
 
     return (
-        <>
-            <form onSubmit={handleLogin}>
-                <div style={{ display: "grid" }}>
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        placeholder="email.."
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)} />
+        <div className="container">
+            <div className="titulo">Entrar</div>
+            <div className="subtitulo">
+                Digite suas credenciais para acessar sua conta
+            </div>
+            <form onSubmit={handleLogin} autoComplete="off">
+                <label htmlFor="email">Email</label>
+                <input
+                    type="email"
+                    placeholder="seu@email.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
 
-                    <label htmlFor="password">Senha:</label>
-                    <input
-                        type="password"
-                        placeholder="senha.."
-                        value={senha}
-                        onChange={(e) => setSenha(e.target.value)} />
-                    <input type="submit" value="Enviar" />
+                <label htmlFor="password">Senha</label>
+                <input
+                    type="password"
+                    placeholder="******"
+                    value={senha}
+                    onChange={(e) => setSenha(e.target.value)}
+                    required
+                />
+
+                <div className="esqueceu">
+                    <a href="#">Esqueceu a senha?</a>
+                </div>
+                <input type="submit" value="Entrar" />
+                <div className="login-link">
+                    Não tem uma conta? <a href="/cadastro">Cadastre-se</a>
                 </div>
             </form>
-        </>
+        </div>
     );
 }

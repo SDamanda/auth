@@ -14,8 +14,8 @@ body {
     justify-content: flex-start;
 }
 
-h1 {
-    font-size: 20px;
+.titulo {
+    font-size: 2rem;
     font-weight: 700;
     color: #fff;
     text-align: center;
@@ -23,9 +23,8 @@ h1 {
     margin-bottom: 8px;
 }
 
-p {
-    font-size: 15px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.subtitulo {
+    font-size: 1.04rem;
     color: #d8d7d7;
     text-align: center;
     margin-bottom: 22px;
@@ -33,34 +32,33 @@ p {
 
 form {
     width: 100%;
-    max-width: 350px;
+    max-width: 420px;
     background: #111;
-    padding: 30px 30px 30px 30px;
+    padding: 36px 36px 30px 36px;
     border-radius: 16px;
     box-shadow: 0 2px 16px #000a;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 18px;
     align-items: stretch;
     justify-content: center;
 }
 
 form label {
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: 500;
     color: #e3e3e3;
 }
 
 form input[type="text"],
 form input[type="email"],
-form input[type="password"],
-form input[type="number"] {
+form input[type="password"] {
     background: #161616;
     border: 1px solid #242424;
     border-radius: 6px;
     color: #fff;
-    padding: 14px 12px 14px 25px;
-    font-size: 12px;
+    padding: 14px 12px 14px 40px;
+    font-size: 1rem;
     outline: none;
     margin-top: 2px;
     transition: border 0.2s;
@@ -68,8 +66,7 @@ form input[type="number"] {
 
 form input[type="text"]:focus,
 form input[type="email"]:focus,
-form input[type="password"]:focus,
-form input[type="number"]:focus {
+form input[type="password"]:focus {
     border: 1.5px solid #fa8c47;
 }
 
@@ -81,7 +78,7 @@ form input[type="submit"] {
     background: #fa8c47;
     color: #fff;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 1.1rem;
     cursor: pointer;
     box-shadow: 0 2px 8px #f3700a33;
     transition: background 0.2s;
@@ -91,11 +88,28 @@ form input[type="submit"]:hover {
     background: #db6d28;
 }
 
+.esqueceu {
+    margin: 0 0 6px 0;
+    text-align: left;
+}
+
+.esqueceu a {
+    color: #fa8c47;
+    font-size: 0.98rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: text-decoration .2s;
+}
+
+.esqueceu a:hover {
+    text-decoration: underline;
+}
+
 .login-link {
     color: #d7d5d5;
     margin-top: 10px;
     text-align: center;
-    font-size: 12px;
+    font-size: 1rem;
 }
 
 .login-link a {

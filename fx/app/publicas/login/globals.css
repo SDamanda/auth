@@ -14,8 +14,8 @@ body {
     justify-content: flex-start;
 }
 
-.titulo {
-    font-size: 2rem;
+h1 {
+    font-size: 22px;
     font-weight: 700;
     color: #fff;
     text-align: center;
@@ -23,8 +23,9 @@ body {
     margin-bottom: 8px;
 }
 
-.subtitulo {
-    font-size: 1.04rem;
+p {
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #d8d7d7;
     text-align: center;
     margin-bottom: 22px;
@@ -32,7 +33,7 @@ body {
 
 form {
     width: 100%;
-    max-width: 420px;
+    max-width: 350px;
     background: #111;
     padding: 36px 36px 30px 36px;
     border-radius: 16px;
@@ -45,7 +46,7 @@ form {
 }
 
 form label {
-    font-size: 1rem;
+    font-size: 15px;
     font-weight: 500;
     color: #e3e3e3;
 }
@@ -58,7 +59,7 @@ form input[type="password"] {
     border-radius: 6px;
     color: #fff;
     padding: 14px 12px 14px 40px;
-    font-size: 1rem;
+    font-size: 12px;
     outline: none;
     margin-top: 2px;
     transition: border 0.2s;
@@ -78,7 +79,7 @@ form input[type="submit"] {
     background: #fa8c47;
     color: #fff;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 12px;
     cursor: pointer;
     box-shadow: 0 2px 8px #f3700a33;
     transition: background 0.2s;
@@ -88,28 +89,11 @@ form input[type="submit"]:hover {
     background: #db6d28;
 }
 
-.esqueceu {
-    margin: 0 0 6px 0;
-    text-align: left;
-}
-
-.esqueceu a {
-    color: #fa8c47;
-    font-size: 0.98rem;
-    text-decoration: none;
-    font-weight: 500;
-    transition: text-decoration .2s;
-}
-
-.esqueceu a:hover {
-    text-decoration: underline;
-}
-
 .login-link {
     color: #d7d5d5;
     margin-top: 10px;
     text-align: center;
-    font-size: 1rem;
+    font-size: 12px;
 }
 
 .login-link a {

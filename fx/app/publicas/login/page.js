@@ -27,10 +27,8 @@ export default function Login() {
 
     return (
         <div className="container">
-            <div className="titulo">Entrar</div>
-            <div className="subtitulo">
-                Digite suas credenciais para acessar sua conta
-            </div>
+            <h1>Entrar</h1>
+            <p>Digite suas credencias para acessar sua conta</p>
             <form onSubmit={handleLogin} autoComplete="off">
                 <label htmlFor="email">Email</label>
                 <input
@@ -49,13 +47,9 @@ export default function Login() {
                     onChange={(e) => setSenha(e.target.value)}
                     required
                 />
-
-                <div className="esqueceu">
-                    <a href="#">Esqueceu a senha?</a>
-                </div>
                 <input type="submit" value="Entrar" />
                 <div className="login-link">
-                    Não tem uma conta? <a href="/cadastro">Cadastre-se</a>
+                    Não tem uma conta? <a href="/publicas/cadastro">Cadastre-se</a>
                 </div>
             </form>
         </div>

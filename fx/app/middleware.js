@@ -5,7 +5,7 @@ const publicrouter = [
     { path: "/login", whenAuthenticated: "redirect" },
 ];
 
-const redirectIfNotAuthenticated = "/cadastro";
+const redirectIfNotAuthenticated = "/site";
 
 export function middleware(request) {
     const { pathname } = request.nextUrl;
@@ -27,7 +27,7 @@ export function middleware(request) {
 
     if (foundRoute && token && foundRoute.whenAuthenticated === "redirect") {
         const url = request.nextUrl.clone();
-        url.pathname = "/privadas/comercial";
+        url.pathname = "/privadas/site";
         return NextResponse.redirect(url);
     }
 

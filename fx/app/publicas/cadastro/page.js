@@ -30,7 +30,7 @@ export default function Cadastro() {
             if (error) {
                 alert('Erro ao autenticar: ' + error.message);
             } else {
-                window.location.href = '/privadas/comercial';
+                window.location.href = '/privadas/site';
             }
         } else {
             alert(result.error || 'Erro ao cadastrar usuário');

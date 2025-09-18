@@ -20,8 +20,7 @@ export default function Login() {
         if (error) {
             alert(error.message);
         } else {
-            alert('Login realizado com sucesso!');
-            window.location.href = '/privadas/comercial';
+            window.location.href = '/privadas/site';
         }
     }
 
